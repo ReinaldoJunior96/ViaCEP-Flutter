@@ -9,7 +9,7 @@ class Cep {
   String gia;
   String ddd;
   String siafi;
-
+  bool erro;
   Cep(
       {this.cep,
       this.logradouro,
@@ -20,7 +20,8 @@ class Cep {
       this.ibge,
       this.gia,
       this.ddd,
-      this.siafi});
+      this.siafi,
+      this.erro});
 
   Cep.fromJson(Map<String, dynamic> json) {
     cep = json['cep'];

@@ -4,7 +4,6 @@ import 'package:viacep_app/model/cep.dart';
 
 class HomePage extends StatelessWidget {
   final _cepController = TextEditingController();
-
   CepBloc bloc = CepBloc();
   @override
   Widget build(BuildContext context) {
@@ -18,18 +17,25 @@ class HomePage extends StatelessWidget {
               TextFormField(
                 controller: _cepController,
                 keyboardType: TextInputType.number,
+                maxLength: 8,
                 onChanged: (value) {
                   bloc.input.add(value);
                 },
               ),
               StreamBuilder<Cep>(
                   stream: bloc.output,
-                  initialData: Cep(bairro: "Sem bairro"),
+                  initialData: Cep(bairro: "Informe um CEP", erro: false),
                   builder: (context, snapshot) {
-                    if (snapshot.hasError) {
-                      return Text("Erro na pesquisa");
-                    }
                     Cep model = snapshot.data;
+                    if (model.erro == true && _cepController.text.isEmpty) {
+                      return Text("Infomre um cep");
+                    }
+                    if (model.erro == true) {
+                      return CircularProgressIndicator();
+                    }
+                    if (model.cep == null && !_cepController.text.isEmpty) {
+                      return Text("CEP Invalido");
+                    }
                     return Text('${model.bairro}');
                   }),
             ],
