@@ -9,4 +9,4 @@
 # Objetivo do projeto
   - O App tem como objetivo consumir a API ViaCep dos Correios trazendo o endeço de acordo com o cep inserido.
 
-![Alt text](/image1 "Optional Title")
+![Screenshot](img1.png)
