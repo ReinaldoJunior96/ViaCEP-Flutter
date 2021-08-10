@@ -10,3 +10,4 @@
   - O App tem como objetivo consumir a API ViaCep dos Correios trazendo o endeço de acordo com o cep inserido.
 
 ![Screenshot](img1.png)
+![Screenshot](img2.png)
