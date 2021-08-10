@@ -1,5 +1,5 @@
 ## ℹ️ Informações do projeto
-- App criado para estudo, 
+- App criado para estudo de aplicações mobile e consumo de serviços. 
 # Tecnologias utilizadas:
 
     - Dart
